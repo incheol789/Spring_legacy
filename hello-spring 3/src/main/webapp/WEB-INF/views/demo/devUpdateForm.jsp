@@ -6,11 +6,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%
+<!-- <%
 		String[] lang = ((Dev)request.getAttribute("dev")).getLang();
 		List<String> langList = Arrays.asList(lang);
 		pageContext.setAttribute("langList", langList);
-%>
+%> -->
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param value="Dev 수정" name="title"/>
