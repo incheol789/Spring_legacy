@@ -187,6 +187,18 @@ public class DemoController {
 		return "redirect:/demo/devList.do";
 		
 	}
+	
+	
+	@PostMapping("/deleteDev.do")
+	public String deleteDev(@RequestParam(name = "no", required = true) int no, RedirectAttributes redirectAttr) {
+		
+		// 비지니스 로직
+		int result = demoService.deleteDev(no);
+		
+		// 리다이렉트
+		redirectAttr.addFlashAttribute("msg", "개발자 삭제 성공~");
+		
+		return "redirect:/demo/devList.do";
 }
 
 
