@@ -53,4 +53,7 @@
 			no = #{no}
 	</update>
 	
-</mapper>
+	<delete id="deleteDev">
+		delete from dev where no = #{no}
+	</delete>
+</mapper>	
