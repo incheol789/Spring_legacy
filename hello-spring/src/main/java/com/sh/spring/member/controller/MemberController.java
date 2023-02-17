@@ -177,18 +177,28 @@ public class MemberController {
 	public void memberDetail() {}
 
 	
-	@PostMapping("/memberUpdate.do")
+	PostMapping("/memberUpdate.do")
 	public String updateMember(Member member, RedirectAttributes redirectAttr, Model model) {
 		
-		// 모달
-		model.addAttribute("loginMember", member);
+		log.trace("updateMember 시작");
 		
-		// 비지니스 로직
-		int result = memberService.updateMember(member);
-		
-		// 사용자 피드백 및 리다이렉트
-		redirectAttr.addFlashAttribute("msg", "내 정보 수정 성공!");
-		
+		try {
+			// 모달
+			model.addAttribute("loginMember", member);
+			log.debug("loginMember = " + member);
+			
+			// 비지니스 로직
+			int result = memberService.updateMember(member);
+			
+			// 사용자 피드백 및 리다이렉트
+			redirectAttr.addFlashAttribute("msg", "내 정보 수정 성공!");
+			
+			
+		} catch (Exception e) {
+			log.error("내 정보 수정 실패", e);
+			throw e;
+		}
+		log.trace("updateMember 끝");
 		return "redirect:/member/memberDetail.do";
 	}
 }
