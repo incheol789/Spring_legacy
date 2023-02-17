@@ -180,7 +180,7 @@ public class MemberController {
 	@PostMapping("/memberUpdate.do")
 	public String updateMember(Member member, RedirectAttributes redirectAttr, Model model) {
 		
-		// 로그인값 꺼내오기
+		// 모달
 		model.addAttribute("loginMember", member);
 		
 		// 비지니스 로직
