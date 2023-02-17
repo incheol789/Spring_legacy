@@ -175,6 +175,12 @@ public class MemberController {
 	
 	@GetMapping("/memberDetail.do")
 	public void memberDetail() {}
+	
+//      @GetMapping("/memberDetail.do")
+//	public String memberDetail() {
+//		
+//          return "/member/memberDetail";
+//	}
 
 	
 	PostMapping("/memberUpdate.do")
