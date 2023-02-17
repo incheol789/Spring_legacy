@@ -19,8 +19,13 @@ div#update-container input, div#update-container select {margin-bottom:10px;}
 		<input type="tel" class="form-control" placeholder="전화번호 (예:01012345678)" name="phone" id="phone" maxlength="11" required value="${loginMember.phone}"/>
 		<br />
 		<input type="submit" class="btn btn-outline-success" value="수정" >&nbsp;
-		<input type="reset" class="btn btn-outline-success" value="취소">
+		<input type="reset" class="btn btn-outline-success" onclick="updateMember()" value="취소">
 	</form>
 </div>
+<script>
+	const updateMember = () => {
+		location.href="${pageContext.request.contextPath}/"
+	}
+</script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>
