@@ -183,7 +183,7 @@ public class MemberController {
 		log.trace("updateMember 시작");
 		
 		try {
-			// 모달
+			// 모델
 			model.addAttribute("loginMember", member);
 			log.debug("loginMember = " + member);
 			
