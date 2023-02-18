@@ -176,12 +176,9 @@ public class MemberController {
 	@GetMapping("/memberDetail.do")
 	public void memberDetail() {}
 	
-//      @GetMapping("/memberDetail.do")
-//	public String memberDetail() {
-//		
-//          return "/member/memberDetail";
-//	}
-
+	// /member/memberDetail.do -> member/memberDetail
+ 	// return 생략 가능
+	
 	
 	PostMapping("/memberUpdate.do")
 	public String updateMember(Member member, RedirectAttributes redirectAttr, Model model) {
