@@ -180,28 +180,27 @@ public class MemberController {
  	// return 생략 가능
 	
 	
-	PostMapping("/memberUpdate.do")
-	public String updateMember(Member member, RedirectAttributes redirectAttr, Model model) {
-		
-		log.trace("updateMember 시작");
+		@PostMapping("/memberUpdate.do")
+	public String memberUpdate(Member member, Model model, RedirectAttributes redirectAttr) {
+			
+		log.trace("memberUpdate 시작");
 		
 		try {
-			// 모델
-			model.addAttribute("loginMember", member);
-			log.debug("loginMember = " + member);
-			
 			// 비지니스 로직
-			int result = memberService.updateMember(member);
+			int result = memberService.memberUpdate(member);
 			
-			// 사용자 피드백 및 리다이렉트
+			// jsp 데이터 전달
+			model.addAttribute("loginMember", member);
+			log.error("loginMember = " + member);
+			
+			// 리다이렉트
 			redirectAttr.addFlashAttribute("msg", "내 정보 수정 성공!");
-			
 			
 		} catch (Exception e) {
 			log.error("내 정보 수정 실패", e);
 			throw e;
 		}
-		log.trace("updateMember 끝");
+		
 		return "redirect:/member/memberDetail.do";
 	}
 }
