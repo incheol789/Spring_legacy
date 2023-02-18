@@ -189,7 +189,7 @@ public class MemberController {
 			// 비지니스 로직
 			int result = memberService.memberUpdate(member);
 			
-			// jsp 데이터 전달
+			// view단 데이터 전달
 			model.addAttribute("loginMember", member);
 			log.error("loginMember = " + member);
 			
