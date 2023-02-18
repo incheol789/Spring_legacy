@@ -180,7 +180,7 @@ public class MemberController {
  	// return 생략 가능
 	
 	
-		@PostMapping("/memberUpdate.do")
+	@PostMapping("/memberUpdate.do")
 	public String memberUpdate(Member member, Model model, RedirectAttributes redirectAttr) {
 			
 		log.trace("memberUpdate 시작");
@@ -200,19 +200,10 @@ public class MemberController {
 			log.error("내 정보 수정 실패", e);
 			throw e;
 		}
-		
+		log.trace("updateMember 끝");
 		return "redirect:/member/memberDetail.do";
 	}
 }
-
-
-
-
-
-
-
-
-
 
 
 
