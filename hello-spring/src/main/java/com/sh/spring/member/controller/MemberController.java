@@ -182,8 +182,6 @@ public class MemberController {
 	
 	@PostMapping("/memberUpdate.do")
 	public String memberUpdate(Member member, Model model, RedirectAttributes redirectAttr) {
-			
-		log.trace("memberUpdate 시작");
 		
 		try {
 			// 비지니스 로직
@@ -191,7 +189,7 @@ public class MemberController {
 			
 			// view단 데이터 전달
 			model.addAttribute("loginMember", member);
-			log.error("loginMember = " + member);
+			log.error("loginMember = {} " + member);
 			
 			// 리다이렉트
 			redirectAttr.addFlashAttribute("msg", "내 정보 수정 성공!");
@@ -200,7 +198,6 @@ public class MemberController {
 			log.error("내 정보 수정 실패", e);
 			throw e;
 		}
-		log.trace("updateMember 끝");
 		return "redirect:/member/memberDetail.do";
 	}
 }
